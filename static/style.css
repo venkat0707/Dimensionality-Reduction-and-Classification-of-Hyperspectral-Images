@@ -1,0 +1,75 @@
+/* FOR IMAGE*/
+.thumb-image {  
+  max-width:800px;
+ /* position: fixed;*/
+margin: auto;
+}
+div.relative {
+  position: relative;
+  left: 580px;
+ top:30px;
+
+}
+div.button {
+  position: relative;
+  left: 200px;
+}
+.thumb-image > img { width: 100%; }
+#a
+{
+   width:600px; /* or whatever width you want. */
+    /* or whatever width you want.   */
+max-height:600px;
+max-width:600px;
+  height:600px;
+    
+
+display: inline-block;
+}
+#b
+{
+   width:600px; /* or whatever width you want. */
+    /* or whatever width you want.   */
+max-height:600px;
+max-width:600px;
+  height:600px;
+    
+
+display: inline-block;
+}
+#r{
+
+position: relative;
+  left: 250px;
+float: right;
+
+}
+#i{
+bottom:100px;
+float:bottom;
+}
+#all{
+background-color: skyblue;
+}
+
+.header {
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 12px;
+}
+
+.footer {
+ 
+  background-color:#0099cc; 
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+padding: 15px;
+  /*position: fixed;
+  
+  
+   width: 100%;
+   
+   */
+}
+
