@@ -5,63 +5,59 @@
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
+  <div class="d-flex flex-row-reverse">
+  <div class="p-2">
+  <button><a href="{% url 'logout' %}">logout</a></button>
+  </div>
+  </div>
   <div class="header">
 
 
-    <br><marquee>
-    <h1  onClick="showHideDiv('divMsg')"> Dimensionality Reduction for Hyperspectral Images</h1></marquee>
+  <marquee>
+    <h1  onClick="showHideDiv('divMsg')"> Dimensionality Reduction and Classification on Hyperspectral Images</h1></marquee>
     
     
     </div>
     
     <form action="/result/" method="post" enctype="multipart/form-data">
-    <!--
-    <div class="container" style="margin-top: 150px;">
-    <div class="row">-->
+  
     {% if raw_url or edit_url %}
-    <span>
-    <div class="thumb-image" id="a">
-    <!--<img src="/media/image.png"  id="image-field" data-imagezoom="true" data-magnification="10" height="600" width="600" alt>
-    <br><h2>Colour Image</h2><div id='r'><h2>Magnifier</h2></div>
-    </div>
-    
-    <div class="relative" id="b" > 
-    
-    <img src="/media/temp.png" height="600" width="600" style="float: right" >
-    <br><hr><br><br>
-    <h2>Grayscale Image</h2>
-    
-    </div >
-    -->
-    <div id="i"><br><br><br><br>
-    Click Below to download new dataset</p><button><a href="/media/dataset/result.mat" download>Download</a></button>
-    
-    </div>
-    </span>
-    {% endif %}
+    <h2>Colour Image</h2>
+    <img src="/media/image.jpg" id="image-field"  data-imagezoom="true" data-magnification="10" height="800" width="1000" alt >
     <br><br>
-    <input type="button" value="Click Here" onClick="showHideDiv('divMsg')"/><br><br>
-    <div id="divMsg" style="display:none" >
-    {% csrf_token %}
+   <h2>Ground Truth Image</h2>
+<img src="/media/ground_truth.jpg"  id="image-field" data-imagezoom="true" data-magnification="10" height="800" width="1000" alt>
+
     
+
+    <br><br>
+    <h2>Classification Image</h2>
+<img src="/media/Classification_map.jpg" id="image-field"  data-imagezoom="true" data-magnification="20" height="800" width="1000" alt >
+    
+
+<br><br><br><br><p>Click here to download demensionally reduced dataset</p>
+<button><a href="/media/dataset/result.mat" download>Download</a></button>
+</div>
+
+    
+
+
+    {% endif %}
+
+    {% csrf_token %}
+    <div class="d-flex justify-content-center">
     
     <input type="file" name="ima" required>
-    <br><br> 
     <input type="submit" value="submit">
-    </div>
     </form>
+  </div>
     </div>
-    <!----
-    <div class="footer">
-      <p><h3>Design&Developed By: T.Venkateswarlu<br>E-Mail:tvenkat@iiitmanipur.ac.in<br>contact:+916303851200</h3></p>
-    <p>
-    </div>
-    --->
-    </div>
-  <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
-  <p>You are not logged in</p>
+<p>Welcome to Hyperspectral Images </p>
   <a href="{% url 'login' %}">login</a> |
   <a href="{% url 'signup' %}">signup</a>
+  <!-- HTML !-->
+
+
 {% endif %}
 {% endblock %}
