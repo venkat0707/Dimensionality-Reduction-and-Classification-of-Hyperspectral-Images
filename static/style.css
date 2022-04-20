@@ -193,11 +193,11 @@ padding: 15px;
 
 /* CSS */
 .button-34 {
-  background: #5E5DF0;
+  background: #0cdf4b;
   border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
+  /*box-shadow: #f0e15d 0 10px 20px -10px;*/
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #f5f1f1;
   cursor: pointer;
   font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
   font-size: 16px;

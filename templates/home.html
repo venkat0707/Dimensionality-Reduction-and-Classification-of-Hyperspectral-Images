@@ -22,6 +22,22 @@
     <form action="/result/" method="post" enctype="multipart/form-data">
   
     {% if raw_url or edit_url %}
+<div style="text-align: center;">
+<div id="box1" style="width: 500px; margin: 0 auto; background: rgb(62, 228, 240); color:black">
+
+  size is of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
+  size is of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br><br>
+  <p>Download Dimesionally Reduced Hyperspectral Dataset</p><br>
+
+<button class="button-34" role="button"><a href="/media/dataset/result.mat" download>Download</a></button>
+    </div>
+  </div>
+
+
+
+
+
+</div>
     <h2>Colour Image</h2>
     <img src="/media/image.jpg" id="image-field"  data-imagezoom="true" data-magnification="10" height="800" width="1000"  >
     <br><br>
@@ -35,9 +51,7 @@
 <img src="/media/Classification_map.jpg" id="image-field"  data-imagezoom="true" data-magnification="20" height="800" width="1000" >
     
 
-<br><br><br><br><p>Click here to download demensionally reduced dataset</p>
-<button class="button-34" role="button"><a href="/media/dataset/result.mat" download>Download</a></button>
-</div>
+
 
     
 
@@ -45,11 +59,22 @@
     {% endif %}
 
     {% csrf_token %}
-    <br><br>
-    <div class="d-flex justify-content-center">
 
+    <br><br>
+   <!---- <div class="d-flex justify-content-center">---->
+      <div class="container text-center d-flex align-items-center justify-content-center">
+      
     <input type="file" name="ima" required>
-    <button class="button-33" role="button" type="submit">submit</button>
+   <input  name="param"  type="number" placeholder="No Of Dimensions" min="1" max="80" style="width: 150px;"  required> 
+     <!--- <input type="number" required min="1" max="50"><br><br>--->
+     <label style="width: 100px;">Technique:</label>
+
+<select name="technique" style="width: 100px;">
+  <option value="1" selected>PCA</option>
+  <option value="2">IPCA</option>
+  <br>
+</select>
+    <button class="button-33" role="button"  style="width: 100px;" type="submit">submit</button>
     </form>
   </div>
     </div>
