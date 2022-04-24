@@ -1,89 +1,70 @@
+<!-- This is Homepage-->
 {% extends 'base.html' %}
-
 {% block title %}Home{% endblock %}
-
 {% block content %}
+<!--- If user Authenticated-->
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <div class="d-flex flex-row-reverse">
-  <div class="p-2">
-    <button class="button-34" role="button"><a href="{% url 'logout' %}">Logout</a></button>
-  </div>
-  </div>
-  <div class="header">
-
-
-  <marquee>
-    <h1  onClick="showHideDiv('divMsg')"> Dimensionality Reduction and Classification on Hyperspectral Images</h1></marquee>
-    
-    
-    </div>
-    
-    <form action="/result/" method="post" enctype="multipart/form-data">
-  
-    {% if raw_url or edit_url %}
-<div style="text-align: center;">
-<div id="box1" style="width: 500px; margin: 0 auto; background: rgb(62, 228, 240); color:black">
-
-  size is of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
-  size is of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br><br>
-  <p>Download Dimesionally Reduced Hyperspectral Dataset</p><br>
-
-<button class="button-34" role="button"><a href="/media/dataset/result.mat" download>Download</a></button>
-    </div>
-  </div>
-
-
-
-
-
+Hi {{ user.username }}!
+<div id="main">
+<div class="d-flex flex-row-reverse">
+<div class="p-2">
+<button class="button-34" role="button"><a href="{% url 'logout' %}">logout</a></button><!-- Logout Button-->
 </div>
-    <h2>Colour Image</h2>
-    <img src="/media/image.jpg" id="image-field"  data-imagezoom="true" data-magnification="10" height="800" width="1000"  >
-    <br><br>
-   <h2>Ground Truth Image</h2>
+</div>
+<div class="header">
+<marquee> <h1  onClick="showHideDiv('divMsg')"> Dimensionality Reduction and Classification on Hyperspectral Images</h1></marquee><!-- Heading-->
+ </div>
+<!--- Form Starts-->
+<form action="/result/" method="post" enctype="multipart/form-data">
+  <!--- if dataset uploaded-->
+{% if raw_url or edit_url %}
+<div id="box1" style="width: 500px; margin: 0 auto; background: rgb(62, 228, 240); color:black text-align: center ;">
+size is of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
+size is of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br>
+<p>Download Dimesionally Reduced Hyperspectral Dataset</p><br>
+<!-- Dimensionally Reduced Dataset-->
+<button class="button-34" role="button"><a href="/media/dataset/result.mat" download>Download</a></button>
+</div>
+<!-- Color Image-->
+<h2>Colour Image</h2>
+<img src="/media/image.jpg" id="image-field"  data-imagezoom="true" data-magnification="10" height="800" width="1000"  >
+<br><br>
+<!-- Groundtruth Image-->
+ <h2>Ground Truth Image</h2>
 <img src="/media/ground_truth.jpg"  id="image-field" data-imagezoom="true" data-magnification="10" height="800" width="1000">
-
-    
-
-    <br><br>
-    <h2>Classification Image</h2>
+<br><br>
+<!-- Classification Image-->
+<h2>Classification Image</h2>
 <img src="/media/Classification_map.jpg" id="image-field"  data-imagezoom="true" data-magnification="20" height="800" width="1000" >
-    
-
-
-
-    
-
-
-    {% endif %}
-
-    {% csrf_token %}
-
-    <br><br>
-   <!---- <div class="d-flex justify-content-center">---->
-      <div class="container text-center d-flex align-items-center justify-content-center">
-      
-    <input type="file" name="ima" required>
-   <input  name="param"  type="number" placeholder="No Of Dimensions" min="1" max="80" style="width: 150px;"  required> 
-     <!--- <input type="number" required min="1" max="50"><br><br>--->
-     <label style="width: 100px;">Technique:</label>
-
-<select name="technique" style="width: 100px;">
-  <option value="1" selected>PCA</option>
-  <option value="2">IPCA</option>
-  <br>
+{% endif %}
+{% csrf_token %}
+<div id="box1" style="width: 500px; margin: 35px auto; background: rgb(242, 245, 65); color:black;">
+<br><br>
+<!-- Inputing The Dataset and no of componets and type of algorithm-->
+Dataset:<input id="inp" name="ima" type="file" id="file"><br><br>
+Dimesnions:<input   name="param"  type="number" placeholder="No Of Dimensions" min="1" max="80" style="width: 150px;"  required> <br><br>
+Technique:<select name="technique"  style="width: 150px;" >
+<option value="1" selected>PCA</option>
+<option value="2">IPCA</option>
 </select>
-    <button class="button-33" role="button"  style="width: 100px;" type="submit">submit</button>
-    </form>
-  </div>
-    </div>
+<br><br>
+<button class="button-34" role="button" type="submit"  style="width: 150px;">submit</button>
+</form>
+<!-- Form Ends-->
+</div>
+<!--- If user not authenticated-->
 {% else %}
+<br><br><br><br>
 <p>Welcome to Hyperspectral Images </p>
-<button class="button-33" role="button"><a href="{% url 'login' %}">login</a></button>
-<button class="button-33" role="button"> <a href="{% url 'signup' %}">signup</a></button>
-  <!-- HTML !-->
-
-
+<button class="button-34" role="button"><a href="{% url 'login' %}">login</a></button>
+<button class="button-34" role="button"> <a href="{% url 'signup' %}">signup</a></button>
+</div>
 {% endif %}
 {% endblock %}
+
+
+
+	
+
+	
+

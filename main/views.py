@@ -39,7 +39,3 @@ def external(request):
    
     return render(request,'home.html',{'raw_url':templateurl,'edit_url':image.stdout,'file_content1': file_content1,'file_content2': file_content2})
     
-
-def read_file(request):
-    
-    return render(request, "home.html", context)
