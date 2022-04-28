@@ -19,14 +19,14 @@ Hi {{ user.username }}!
   <!--- if dataset uploaded-->
 {% if raw_url or edit_url %}
 <div id="box1" style="width: 500px; margin: 0 auto; background: rgb(62, 228, 240); color:black text-align: center ;">
-size is of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
-size is of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br>
+Shape of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
+Shape of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br>
 <p>Download Dimesionally Reduced Hyperspectral Dataset</p><br>
 <!-- Dimensionally Reduced Dataset-->
 <button class="button-34" role="button"><a href="/media/dataset/result.mat" download>Download</a></button>
 </div>
 <!-- Color Image-->
-<h2>Colour Image</h2>
+<h2> False Colour Image</h2>
 <img src="/media/image.jpg" id="image-field"  data-imagezoom="true" data-magnification="10" height="800" width="1000"  >
 <br><br>
 <!-- Groundtruth Image-->
