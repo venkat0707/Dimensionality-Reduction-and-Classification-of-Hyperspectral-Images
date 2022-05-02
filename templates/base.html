@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <head>
-    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}"><!-- falcon.io error -->
-    <meta charset="utf-8">
-    <title>Hyperspectral Image Analysis </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}"><!-- falcon.io error -->
+<meta charset="utf-8">
+<title>Hyperspectral Image Analysis </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link href="{% static 'style.css' %}"  rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <!-- this is jQuery plugin for magnification  --->
     <script  type="text/javascript" > 
     (function($){
         var defaults = {
@@ -132,6 +133,7 @@
     
     
     </script>
+    <!---- This script is for show and hide resulted images,initially it is hide,after uploading the images will be displayed-->
     
     <script  type="text/javascript">
     function showHideDiv(ele) {
@@ -147,17 +149,18 @@
     return false;
     }
     }
-    
-    
-    
     </script>
 
 
 
 
-    <link href="{% static 'style.css' %}"  rel="stylesheet">
-    </head >
+    
+    
 </head>
+
+
+
+<!--   Body starts from here-->
 <body id="all">
   <main>
     {% block content %}

@@ -19,6 +19,7 @@ Hi {{ user.username }}!
   <!--- if dataset uploaded-->
 {% if raw_url or edit_url %}
 <div id="box1" style="width: 500px; margin: 0 auto; background: rgb(62, 228, 240); color:black text-align: center ;">
+  <!-- displaying the shapes before and after the dimensionality reduction -->
 Shape of the Hyperspectral Dataset before Dimensionality Reduction :{{ file_content1 }}<br>
 Shape of the Hyperspectral Dataset After Dimensionality Reduction:{{ file_content2 }}<br>
 <p>Download Dimesionally Reduced Hyperspectral Dataset</p><br>
