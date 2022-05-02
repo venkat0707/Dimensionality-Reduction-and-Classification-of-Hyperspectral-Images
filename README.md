@@ -1,5 +1,13 @@
+# Dimensionality Reduction and Classification on Hyperspectral Images
 
-# Steps to install the packages
+## Steps to Download Hyperspectral Datasets 
+Navigate to the url http://lesun.weebly.com/hyperspectral-data-set.html to download the following datasets
+  #### Indian Pines
+  #### Pavia University
+  #### Salinas
+
+
+## Steps to install the packages
 1.Updating the package list using the following command <br />
 
 $```sudo apt-get update ```<br />
@@ -40,7 +48,7 @@ $ ```pip3 install matplotlib==3.4.3```  <br />
 
 $ ```pip3 install tqdm==4.62.3 ``` <br />
 
-# Steps to run the project
+## Steps to run the project
 1.Open the terminal then navigate to hsi-app directory  <br />
 
 2.Now type python3 manage.py runserver 8080  <br />
