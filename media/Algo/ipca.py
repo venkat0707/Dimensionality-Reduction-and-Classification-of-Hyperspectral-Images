@@ -2,9 +2,17 @@ import numpy as np
 np.seterr(divide='ignore', invalid='ignore')
 from scipy import linalg as la
 class IPCA():
+
+    #initialization
     def __init__(self, n_components):
         self.n_components = n_components
         self.iteration = 0
+        
+        
+        
+        
+        
+        
 
     def fit(self, X):
         
@@ -27,7 +35,12 @@ class IPCA():
         self.components_ = self.components_[idx,:]
         
         return self
-      
+        
+        
+        
+        
+        
+       #fit the model partially
     def partial_fit(self, u):
        
         n = float(self.iteration)
@@ -61,6 +74,8 @@ class IPCA():
         self.components_ = V
         return
     
+    
+    #transform the data into the hyper-plane
     def transform(self, X):
        
      
